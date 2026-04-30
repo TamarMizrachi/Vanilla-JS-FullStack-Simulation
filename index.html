@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>ספרייה אישית</title>
+</head>
+<body dir="rtl">
+
+  <div id="main_content"></div>
+
+  <template id="welcome">
+    <section>
+      <h1 id="welcomeTitle">ברוכים הבאים לספרייה האישית שלך</h1>
+      <p id="welcomeText">כאן תוכלו לשמור, לדרג ולנהל את הספרים האהובים עליכם – הכל במקום אחד פשוט וקל.</p>
+
+      <button id="loginBtn1" type="submit" onclick="loadPage('logIn')">התחברות</button>
+      <button id="signupBtn1" type="submit" onclick="loadPage('signUp')">הרשמה</button>
+    </section>
+  </template>
+
+  <template id="logIn">
+    <section>
+      <h1 id="logInTitle">התחברות</h1>
+      <p>הכניסו כתובת מייל וסיסמה כדי להתחבר:</p>
+
+      <form>
+        <label for="email">מייל:</label><br>
+        <input type="email" id="email1" name="email" required><br><br>
+
+        <label for="password">סיסמה:</label><br>
+        <input type="password" id="password1" name="password" required><br><br>
+
+        <button id="loginBtn" type="submit">התחבר</button>
+      </form>
+    </section>
+  </template>
+
+  <template id="signUp">
+    <section>
+      <h1 id="signUpTitle">הרשמה</h1>
+
+      <form>
+        <label for="username">שם משתמש:</label>
+        <input type="text" id="username" required>
+
+        <label for="email">מייל:</label>
+        <input type="email" id="email" required>
+
+        <label for="password">סיסמה:</label>
+        <input type="password" id="password" required>
+
+        <button id="signupBtn" type="submit">הרשמה</button>
+      </form>
+    </section>
+  </template>
+
+  <template id="MyLibrary">
+    <section>
+      <h1>📚 הספרייה האישית שלי</h1>
+      <button id="logoutBtn" onclick="logOut()">🚪 התנתק</button>
+      <button id="addBookBtn" onclick="openAddBookForm()">➕ הוסף ספר</button>
+
+      <div id="addBookForm" style="display: none; margin-top: 1em;">
+        <h3>הוספת ספר חדש</h3>
+        <input type="text" id="bookTitle" placeholder="שם הספר">
+        <input type="text" id="bookAuthor" placeholder="שם המחבר">
+        <button onclick="submitNewBook()">שמור</button>
+      </div>
+
+      <div id="editBookForm" style="display:none; margin-top: 1em;">
+        <h3>עריכת ספר</h3>
+        <input type="text" id="editBookTitle" placeholder="שם הספר">
+        <input type="text" id="editBookAuthor" placeholder="שם המחבר">
+        <button id="saveEditBtn">שמור שינויים</button>
+        <button onclick="closeEditForm()">בטל</button>
+      </div>
+
+      <div id="bookList"></div>
+
+      <div id="booksContainer" class="book-grid"></div>
+      <div class="book-grid"></div>
+    </section>
+  </template>
+
+</body>
+
+  <script src="./js/contact.js"></script>
+  <script src="./js/tamplate.js"></script>
+  <script src="./js/network.js"></script>
+  <script src="./js/FXMLHttpRequest.js"></script>
+  <script src="./js/server.js"></script>
+  <script src="./js/DB.js"></script>
+  <script src="./js/library.js"></script>
+
+</html>
